@@ -1,0 +1,13 @@
+{
+  "name": "ESTIM-Automation",
+  "type": "module",
+  "devDependencies": {
+    "@wdio/local-runner": "^8.36.1",
+    "@wdio/mocha-framework": "^8.36.1",
+    "@wdio/spec-reporter": "^8.36.1",
+    "ts-node": "^10.9.2"
+  },
+  "scripts": {
+    "wdio": "wdio run ./wdio.conf.js"
+  }
+}
