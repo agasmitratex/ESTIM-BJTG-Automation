@@ -39,6 +39,7 @@ class estimLoginPage {
         await this.inputUsername.setValue(username);
         await this.inputPassword.setValue(password);
         await field.bandbox(await this.inputCorporate, corporate);
+        await this.inputCaptcha.click();
         // await this.inputCorporate.setValue(corporate)
         // await $('//span[text()="' + corporate + '"]').waitForClickable();
         // await $('//span[text()="' + corporate + '"]').click();
