@@ -1,10 +1,10 @@
 import { $ } from '@wdio/globals'
 
-class field {
+class Field {
     async dropdown(ddlElement, value) {
         await ddlElement.click();
         await $('//span[text()="' + value + '"]').click();
-        await browser.pause(1000);
+        await browser.pause(500);
     }
 
     async bandbox(ddlElement, value) {
@@ -15,4 +15,4 @@ class field {
     }
 }
 
-export default new field ();
+export default new Field ();

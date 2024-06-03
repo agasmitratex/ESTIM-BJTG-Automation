@@ -1,7 +1,7 @@
 import { $ } from '@wdio/globals'
-import field from './field.js'
+import field from '../common/common_field.js'
 
-class menuCreateIncident {
+class PageEpCreateIncident {
     get ddlCategory () {
         return $('//input[@placeholder="Choose Category"]')
     }
@@ -58,50 +58,50 @@ class menuCreateIncident {
         return $('//button[text()="Cancel"]')
     }
 
-    async Category (value) {
-        await field.dropdown(this.ddlCategory, value);
-    }
+    // async Category (value) {
+    //     await field.dropdown(this.ddlCategory, value);
+    // }
 
-    async SubCategory (value) {
-        await field.dropdown(this.ddlSubCategory, value);
-    }
+    // async SubCategory (value) {
+    //     await field.dropdown(this.ddlSubCategory, value);
+    // }
 
-    async ItemCategory (value) {
-        await field.dropdown(this.ddlItemCategory, value);
-    }
+    // async ItemCategory (value) {
+    //     await field.dropdown(this.ddlItemCategory, value);
+    // }
 
-    async ItemName (value) {
-        await field.dropdown(this.ddlItemName, value);
-    }
+    // async ItemName (value) {
+    //     await field.dropdown(this.ddlItemName, value);
+    // }
 
-    async MobileNumber (value) {
-        await this.inputMobileNumber.setValue(value);
-    }
+    // async MobileNumber (value) {
+    //     await this.inputMobileNumber.setValue(value);
+    // }
 
-    async Location (value) {
-        await field.bandbox(this.ddlLocation, value);
-    }
+    // async Location (value) {
+    //     await field.bandbox(this.ddlLocation, value);
+    // }
 
-    async Building (value) {
-        await field.bandbox(this.ddlBuilding, value);
-    }
+    // async Building (value) {
+    //     await field.bandbox(this.ddlBuilding, value);
+    // }
 
-    async Summary (value) {
-        await this.inputSummary.setValue(value);
-    }
+    // async Summary (value) {
+    //     await this.inputSummary.setValue(value);
+    // }
 
-    async Description (value) {
-        await this.inputDescription.setValue(value);
-    }
+    // async Description (value) {
+    //     await this.inputDescription.setValue(value);
+    // }
 
-    async Save () {
-        await this.btnSave.click();
-    }
+    // async Save () {
+    //     await this.btnSave.click();
+    // }
 
-    async Cancel () {
-        await this.btnCancel.click();
-    }
+    // async Cancel () {
+    //     await this.btnCancel.click();
+    // }
 
 }
 
-export default new menuCreateIncident()
+export default new PageEpCreateIncident()

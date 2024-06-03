@@ -1,14 +1,15 @@
 import { $ } from '@wdio/globals'
-import field from './field.js'
+import field from '../common/common_field.js'
 
-class estimLoginPage {
+
+class PageLogin {
     get inputUsername () {
         // return $('/html/body/div[1]/div[2]/div/div[1]/div/div/div[2]/table/tbody[1]/tr/td/div/div/div[2]/div/input')
         return $('//input[@placeholder="Username"]')
     }
     get inputPassword () {
-    //     return $('/html/body/div[1]/div[2]/div/div[1]/div/div/div[2]/table/tbody[1]/tr/td/div/div/div[3]/div/input')
-    return $('//input[@placeholder="Password"]')
+        //     return $('/html/body/div[1]/div[2]/div/div[1]/div/div/div[2]/table/tbody[1]/tr/td/div/div/div[3]/div/input')
+        return $('//input[@placeholder="Password"]')
     }
     get inputCorporate () {
         // return $('/html/body/div[1]/div[2]/div/div[1]/div/div/div[2]/table/tbody[1]/tr/td/div/div/div[4]/div/span/input')
@@ -38,8 +39,8 @@ class estimLoginPage {
     async Login (username, password, corporate) {
         await this.inputUsername.setValue(username);
         await this.inputPassword.setValue(password);
-        await field.bandbox(await this.inputCorporate, corporate);
-        await this.inputCaptcha.click();
+        await field.bandbox(this.inputCorporate, corporate);
+        await this.inputCaptcha.click()
         // await this.inputCorporate.setValue(corporate)
         // await $('//span[text()="' + corporate + '"]').waitForClickable();
         // await $('//span[text()="' + corporate + '"]').click();
@@ -47,17 +48,18 @@ class estimLoginPage {
         await this.btnLogin.click();
     }
 
-    async Register () {
-        await this.btnRegister.click();
-    }
-
-    async ForgotPassword () {
-        await this.btnForgotPassword.click();
-    }
-
     async OpenBrowser () {
-        await browser.url('https://estim-trial.com/ende/login.zul');
+        await browser.url(baseUrlEstimTrial + 'login.zul');
     }
+
+    // async Register () {
+    //     await this.btnRegister.click();
+    // }
+
+    // async ForgotPassword () {
+    //     await this.btnForgotPassword.click();
+    // }
+
 }
 
-export default new estimLoginPage ();
+export default new PageLogin ();

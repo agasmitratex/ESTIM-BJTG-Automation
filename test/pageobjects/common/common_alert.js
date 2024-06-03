@@ -1,6 +1,6 @@
 import { $ } from '@wdio/globals'
 
-class alert {
+class Alert {
     get alertSuccess () {
         return $('//span[text()="Success!"]')
     }
@@ -36,4 +36,4 @@ class alert {
 
 
 
-export default new alert()
+export default new Alert()
