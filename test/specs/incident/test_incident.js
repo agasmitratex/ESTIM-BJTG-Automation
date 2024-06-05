@@ -20,9 +20,9 @@ describe('Incident Management', () => {
 
     it('Create Incident', async () => {
         await PageEpPortal.menuCreateIncident.click();
-        await Field.dropdown(PageEpCreateIncident.ddlCategory, 'General');
-        await Field.dropdown(PageEpCreateIncident.ddlSubCategory, 'HR');
-        // await Field.dropdown(PageEpCreateIncident.ddlItemCategory, '');
+        await Field.dropdown(PageEpCreateIncident.ddlCategory, 'Information Technology');
+        await Field.dropdown(PageEpCreateIncident.ddlSubCategory, 'Software');
+        await Field.dropdown(PageEpCreateIncident.ddlItemCategory, 'Email');
         // await Field.dropdown(PageEpCreateIncident.ddlItemCategory, '');
         await PageEpCreateIncident.inputSummary.setValue('Test Automation dari WDIO biasa');
         await PageEpCreateIncident.inputDescription.setValue('Deskripsi dari Test Automation dari WDIO biasa');
@@ -30,6 +30,6 @@ describe('Incident Management', () => {
         await expect(Alert.alertConfirmation).toBeDisplayed();
         // await Alert.btnConfirmationYes.click();
         // await expect(Alert.alertSuccess).toBeDisplayed();
-        await browser.pause(5000);
+        await browser.pause(10000);
     })
 })
