@@ -243,7 +243,7 @@ export const config = {
     afterTest: async function(test, context, { error, result, duration, passed, retries }) {
         if (error) {
             const timestamp = getFormattedTimestamp();
-            const filename = './errorScreenshots/' + timestamp + '_' + world.pickle.name +  '.png';
+            const filename = './errorScreenshots/' + timestamp + '_' + test.title +  '.png';
             await browser.saveScreenshot(filename);
         }
     },
