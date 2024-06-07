@@ -1,0 +1,5 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Fri Jun 07 09:02:54 WIB 2024","Fri Jun 07 09:02:55 WIB 2024","999","","Login Page","","","","Forgot Password",""
+"broken","Fri Jun 07 09:03:25 WIB 2024","Fri Jun 07 09:03:36 WIB 2024","10134","","Incident Management","","","","Create Incident",""
+"failed","Fri Jun 07 09:02:54 WIB 2024","Fri Jun 07 09:03:15 WIB 2024","21740","","Incident Management","","","","Login",""
+"broken","Fri Jun 07 09:03:15 WIB 2024","Fri Jun 07 09:03:25 WIB 2024","10152","","Incident Management","","","","Switch Role",""

@@ -1,0 +1,1 @@
+{"total":2,"items":[{"uid":"fd987bc9688640e4cf003dde2ef752f4","name":"Incident Management","statistic":{"failed":1,"broken":2,"skipped":0,"passed":0,"unknown":0,"total":3}},{"uid":"5866c8cf6dc0bdfe4a18dbfe54a2de24","name":"Login Page","statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1}}]}
