@@ -7,9 +7,11 @@
     "@wdio/local-runner": "^8.38.2",
     "@wdio/mocha-framework": "^8.38.2",
     "@wdio/spec-reporter": "^8.38.2",
+    "rimraf": "^5.0.7",
     "ts-node": "^10.9.2"
   },
   "scripts": {
-    "wdio": "wdio run ./wdio.conf.js"
+    "wdio": "rimraf allure-results && wdio run ./wdio.conf.js",
+    "allure": "allure generate allure-results --clean && allure open"
   }
 }
