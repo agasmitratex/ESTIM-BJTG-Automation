@@ -12,6 +12,7 @@
   },
   "scripts": {
     "wdio": "rimraf allure-results && wdio run ./wdio.conf.js",
-    "allure": "allure generate allure-results --clean && allure open"
+    "allure": "allure generate allure-results --clean && allure open",
+    "file": "npx wdio run wdio.conf.js --spec "
   }
 }
