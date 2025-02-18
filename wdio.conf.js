@@ -7,7 +7,7 @@ function getFormattedTimestamp() {
     const minutes = String(date.getMinutes()).padStart(2, '0');
     const seconds = String(date.getSeconds()).padStart(2, '0');
 
-    return `${year}${month}${day}${hours}${minutes}${seconds}`;
+    return `${year}${month}${day}-${hours}${minutes}${seconds}`;
 }
 
 export const config = {
@@ -204,7 +204,7 @@ export const config = {
      * @param {object}         browser      instance of created browser/device session
      */
     before: function (capabilities, specs) {
-        global.baseUrlEstimTrial = 'https://estim-trial.com/ende/';
+        global.baseUrlBjtgTest = 'https://estim-test.com:8443/bankjateng-test/';
     },
     /**
      * Runs before a WebdriverIO command gets executed.
