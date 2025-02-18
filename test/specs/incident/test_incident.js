@@ -5,27 +5,20 @@ import PageLogin from "../../pageobjects/login/page_login.js";
 import PageSupport from "../../pageobjects/support/page_support.js";
 import Field from "../../pageobjects/common/common_field.js";
 
-describe('Incident Management', () => {
+describe('Pelaporan Incident oleh Requester', () => {
 
     it('Login', async () => {
         await PageLogin.OpenBrowser();
-        await PageLogin.Login('admin.sad', 'estim', 'Solusi Alih Daya');
-        await expect(browser).toHaveUrl(baseUrlEstimTrial + 'index.zul');
-    })
-
-    it('Switch Role', async () => {
-        await PageSupport.btnSwitchRole.click();
-        await expect(browser).toHaveUrl(baseUrlEstimTrial + 'ep.zul');
+        await PageLogin.Login('requester', 'estim', 'Karyawan');
+        await expect(browser).toHaveUrl(baseUrlBjtgTest + 'ep.zul');
     })
 
     it('Create Incident', async () => {
         await PageEpPortal.menuCreateIncident.click();
-        await Field.dropdown(PageEpCreateIncident.ddlCategory, 'General');
-        await Field.dropdown(PageEpCreateIncident.ddlSubCategory, 'HR');
-        // await Field.dropdown(PageEpCreateIncident.ddlItemCategory, 'Email');
-        // await Field.dropdown(PageEpCreateIncident.ddlItemCategory, '');
-        await PageEpCreateIncident.inputSummary.setValue('Test Automation dari WDIO biasa');
-        await PageEpCreateIncident.inputDescription.setValue('Deskripsi dari Test Automation dari WDIO biasa');
+        await Field.dropdown(PageEpCreateIncident.ddlCategory, 'APLIKASI');
+        await Field.dropdown(PageEpCreateIncident.ddlSubCategory, 'BIMA');
+        await PageEpCreateIncident.inputSummary.setValue('Test Create Incident Automation');
+        await PageEpCreateIncident.inputDescription.setValue('Test Create Incident Automation');
         await PageEpCreateIncident.btnSave.click();
         await expect(Alert.alertConfirmation).toBeDisplayed();
         // await Alert.btnConfirmationYes.click();

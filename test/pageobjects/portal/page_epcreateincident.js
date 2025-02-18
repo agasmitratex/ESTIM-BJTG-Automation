@@ -32,10 +32,10 @@ class PageEpCreateIncident {
         return $('//textarea[@placeholder="Input Description"]')
     }
     get btnSave () {
-        return $('//button[text()="Save"]')
+        return $('//button[text()="Save" or text()="Simpan"]')
     }
     get btnCancel () {
-        return $('//button[text()="Cancel"]')
+        return $('//button[text()="Cancel" or text()="Batalkan]')
     }
 }
 
