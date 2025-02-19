@@ -13,7 +13,7 @@ class PageLogin {
         return $('//input[@placeholder="Captcha"]')
     }
     get btnLogin () {
-        return $('//button[text()="Login"]')
+        return $('//button[text()="Login" or text()="Masuk"]')
     }
     async Login (username, password, status) {
         await this.inputUsername.setValue(username);

@@ -16,6 +16,10 @@ class Field {
     async bandbox(ddlElement, value) {
         await ddlElement.setValue(value);
     }
+
+    async editnumber(value){
+        await $('//a/span[contains(normalize-space(text()), "' + value + '")]').click();
+    }
 }
 
 export default new Field ();

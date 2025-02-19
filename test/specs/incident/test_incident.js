@@ -4,6 +4,7 @@ import PageEpPortal from "../../pageobjects/portal/page_epportal.js";
 import PageLogin from "../../pageobjects/login/page_login.js";
 import PageSupport from "../../pageobjects/support/page_support.js";
 import Field from "../../pageobjects/common/common_field.js";
+import PageEditTicketPortal from "../../pageobjects/portal/page_editticketportal.js";
 
 describe('Pelaporan Incident oleh Requester', () => {
 
@@ -21,8 +22,38 @@ describe('Pelaporan Incident oleh Requester', () => {
         await PageEpCreateIncident.inputDescription.setValue('Test Create Incident Automation');
         await PageEpCreateIncident.btnSave.click();
         await expect(Alert.alertConfirmation).toBeDisplayed();
-        // await Alert.btnConfirmationYes.click();
+        await browser.pause(1000);
+        await Alert.btnConfirmationYes.click();
         // await expect(Alert.alertSuccess).toBeDisplayed();
-        await browser.pause(10000);
+        await browser.pause(1000);
     })
+
+    it ('Edit Ticket', async () => {
+        await PageEpPortal.menuMyOpenTicket.click();
+        await Field.editnumber('INC-JTG-202502');
+        await expect(PageEditTicketPortal.stepBar).toBeDisplayed();
+        await browser.pause(1000);
+        await PageEditTicketPortal.btnEdit.click();
+        await expect(PageEditTicketPortal.inputShortDesc).toBeDisplayed();
+        await PageEditTicketPortal.inputShortDesc.addValue(' edit by automation');
+        await PageEditTicketPortal.inputDescription.addValue(' edit by automation');
+        await PageEditTicketPortal.btnSave.click();
+        await expect(Alert.alertConfirmation).toBeDisplayed();
+        await browser.pause(1000);
+        await Alert.btnConfirmationYes.click();
+        await expect(Alert.alertSuccess).toBeDisplayed();
+        await browser.pause(1000);
+        
+    })
+
+    it ('Add Comment Ticket', async () => {
+        await PageEpPortal.menuMyOpenTicket.click();
+        await Field.editnumber('INC-JTG-202502');
+        await expect(PageEditTicketPortal.stepBar).toBeDisplayed();
+        await browser.pause(1000);
+        await PageEditTicketPortal.inputComment.setValue('Segera dikerjakan yaa..');
+        await PageEditTicketPortal.btnSendComment.click();
+        await browser.pause(1000);
+    })
+    
 })
